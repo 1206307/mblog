@@ -6,7 +6,7 @@
     <a style="font-family:微軟正黑體 ;" href="/">回首頁</a>
 {% endblock %}
 {% block content %}
-    <p style="font-family:微軟正黑體 ;font: size 12px;;letter: spacing 2px;">
-    {{post.body}}
+    <p style="font-family:微軟正黑體 ;font: size 12px;letter-spacing:2px;">
+    {{post.body | safe }}
     </p>
 {% endblock %}
