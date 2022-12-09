@@ -25,15 +25,9 @@ class NewTable(models.Model):
     text_f=models.TextField()
 
 class Product(models.Model):
-    SIZES = (
-        ('S','Small'),
-        ('M','Medium'),
-        ('L','Large'),
-    )
-    sku=models.CharField(max_length=5)
-    name=models.CharField(max_length=20)
-    price=models.PositiveIntegerField()
-    size=models.CharField(max_length=1,choices=SIZES)
+    name = models.CharField(max_length=20,unique=True)
+    price=models.DecimalField(max_digits=7,decimal_places=2,default=0)
+    qty=models.DecimalField(max_digits=5,decimal_places=2,default=0)
 
     def __str__(self):
         return self.name

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.staticfiles.views import serve
 from mainsite.views import homepage,showpost
+from About.views import about,listing,disp_detail,matpshow
 
 
 urlpatterns = [
@@ -24,4 +25,8 @@ urlpatterns = [
     path('favicon.ico',serve,{'path':'img/auo.ico'}),
     path('',homepage),
     path('post/<slug:slug>/',showpost),
+    path('about/',about),
+    path('list/',listing),
+    path('list/<str:id>',disp_detail),
+    path('matp/',matpshow),
 ]
