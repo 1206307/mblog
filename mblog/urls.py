@@ -18,6 +18,7 @@ from django.urls import path,include
 from django.contrib.staticfiles.views import serve
 from mainsite.views import homepage,showpost
 from About.views import about,listing,disp_detail,matpshow
+from kmesns.views import kmeanshow
 
 
 urlpatterns = [
@@ -28,5 +29,6 @@ urlpatterns = [
     path('about/',about),
     path('list/',listing),
     path('list/<str:id>',disp_detail),
-    path('matp/',matpshow),
+    path('matp/<str:slug>/',matpshow),
+    path('kmeans/<str:slug>/',kmeanshow),
 ]
